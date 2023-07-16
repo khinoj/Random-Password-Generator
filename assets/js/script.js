@@ -15,6 +15,7 @@ function generatePassword() {
 
   let passWordGen = [];
   passwordLength = '';
+  finalPassword = '';
 
   passwordLength = prompt('Pick between 8 and 128 characters!');
   if (passwordLength <= 7 || passwordLength >= 129) {
@@ -42,11 +43,11 @@ if (confirmLowerCase) {
     passWordGen = passWordGen.concat(toLowerCase);
 }
 
-if(confirmUpperCase) {
+if (confirmUpperCase) {
     passWordGen = passWordGen.concat(toUpperCase);
 }
 
-if(confirmNumbers) {
+if (confirmNumbers) {
     passWordGen = passWordGen.concat(toNumbers);
 }
 
@@ -54,11 +55,19 @@ if (confirmSpecialChars) {
     passWordGen = passWordGen.concat(toSpecialChars);
 }
 
+for (i = 0; i < passwordLength; i++) {
+    finalPassword = finalPassword + passWordGen[Math.floor(Math.random() * [passWordGen.length])];  
+}
+
+console.log(finalPassword)
+return(finalPassword);
+
+
 
 }
 
 
-generatePassword();
+// generatePassword();
 
 
 // Write password to the #password input
@@ -72,3 +81,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+generatePassword();
