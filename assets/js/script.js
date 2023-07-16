@@ -62,13 +62,9 @@ for (i = 0; i < passwordLength; i++) {
 console.log(finalPassword)
 return(finalPassword);
 
-
-
 }
 
-
 // generatePassword();
-
 
 // Write password to the #password input
 function writePassword() {
