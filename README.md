@@ -21,3 +21,17 @@
 * THEN a password is generated that matches the selected criteria
 * WHEN the password is generated
 * THEN the password is either displayed in an alert or written to the page
+
+## Screenshot
+
+![](./assets/img/random_image.PNG)
+
+## Reference
+
+* N/A
+
+
+## GitHub
+
+1. https://github.com/khinoj/Random-Password-Generator
+2. https://khinoj.github.io/Random-Password-Generator/
