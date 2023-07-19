@@ -23,7 +23,7 @@ function generatePassword() {
   }
 
   console.log(passwordLength);
-
+  //ask the user if they want specific characters, number or special chars
   alert("Your secure password is " + passwordLength + " Characters Long");
   confirmLowerCase = confirm ("Do you want lower case characters?");
   confirmUpperCase = confirm ("Do you want Upper case characters?");
@@ -35,26 +35,32 @@ function generatePassword() {
   console.log(confirmNumbers);
   console.log(confirmSpecialChars);
 
+  // statement for if all false return to aler
 if (confirmLowerCase === false && confirmUpperCase === false && confirmNumbers === false && confirmSpecialChars === false) {
   return 'You Must Pick one!'
 }
 
+// if user picks confirmLowerCase blank array + toLowerCase array
 if (confirmLowerCase) {
     passWordGen = passWordGen.concat(toLowerCase);
 }
 
+// if user picks confirmUpperCase blank array + toUpperCase array
 if (confirmUpperCase) {
     passWordGen = passWordGen.concat(toUpperCase);
 }
 
+// if user picks confirmNumbers blank array + toNumbers array
 if (confirmNumbers) {
     passWordGen = passWordGen.concat(toNumbers);
 }
 
+// if user picks confirmSpecialChars blank array + toSpecialChars array
 if (confirmSpecialChars) {
     passWordGen = passWordGen.concat(toSpecialChars);
 }
 
+//for loop with passwordLength blank string ++ finalPassword blank string to a math section for adding characters. 
 for (i = 0; i < passwordLength; i++) {
     finalPassword = finalPassword + passWordGen[Math.floor(Math.random() * [passWordGen.length])];  
 }
